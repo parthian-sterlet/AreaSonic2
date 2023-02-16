@@ -207,7 +207,7 @@ int main(int argc, char *argv[])
 	char file_chr_len[500], file_chr_name[500], **filearea_var, **filechr, **filearea_const_for, **filearea_const_back;
 	if (argc != 9)
 	{
-		printf("%s 1file_area_shuffled 2file chr_len_arrays 3chr_name_array 4file_list_area_constant_base_one(test) 5file_area_constant_base_two(control) 6int_no_of_generations 7file_out", argv[0]);//file_out_distribution
+		printf("%s 1file_area_shuffled 2file chr_len_arrays 3chr_name_array 4file_list_area_constant_base_one(test) 5file_area_constant_base_two(control) 6int_no_of_generations 7file_out 8file_out_distribution", argv[0]);
 		exit(1);
 	}
 	FILE** in_const_for, ** in_const_back, ** in_var, * out, * in_len, * in_name, * outd;
