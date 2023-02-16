@@ -7,7 +7,7 @@
 #include  <ctype.h>
 #define Min(a,b) ((a)>(b))? (b):(a);
 #define Max(a,b) ((a)>(b))? (a):(b);
-#define BINS 1000
+#define BINS 5000
 #define KBASE 1000
 //shuffling for razmetka 
 //input 1st
