@@ -23,13 +23,13 @@ AreaSonic source code is written in C++ language. To compile exetubables from th
 Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns in a track file are critically important, they represent a chromosome name and left/right positions of genomic regions. Note that regions in a BED file are presumed to be sorted in the ascending order of positions, the overlaps between neighbor regions are forbidden. Two input text files for the list of chromosome names and their lengths are required too, see their ready examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_length_dm5.txt)
 
 # Source code
-Folder [**src**](https://github.com/parthian-sterlet/areasonic/tree/master/src) contains files with AreaSonic source codes, they respect to decribed below separate modules of pipeline.
+Folder [**src**](https://github.com/parthian-sterlet/areasonic2/tree/master/src) contains files with AreaSonic2 source codes, they respect to decribed below separate modules of pipeline.
 
 # How to compile
 * In Linux system: 
 
-git clone https://github.com/parthian-sterlet/areasonic \
-cd areasonic\src\
+git clone https://github.com/parthian-sterlet/areasonic2 \
+cd areasonic2\src\
 chmod a+x build.sh\
 ./build.sh
 
@@ -57,17 +57,31 @@ Command line arguments:
 8. int logic: 1 means stringent requirement for criteria in all columns, 0 means mild requirement for only one of criteria in at least one of columns
 
 ## 2. Permutations
-The main part of algorithm performing Monte Carlo simulation
-[area_shuffling.cpp](https://github.com/parthian-sterlet/areasonic/blob/master/src/area_shuffling.cpp)
+The main part of algorithm performing Monte Carlo simulation, three tracks in BED format
+[area_shuffling_pair_bed.cpp](https://github.com/parthian-sterlet/areasonic2/blob/master/src/area_shuffling_pair_bed.cpp)
 
 Command line arguments:
 1. input file in BED format, permuted track 
 2. input file, the list of chromosome lengths 
-3. input file in BED format, fixed track 
-4. integer number of iterations, minimal 100, at least 500 is required for stable results
-5. output file, statistical estimates for the overlap length between two tracks
-6. output file, distribution of expected overlap length 
-7. input file, list of chromosome names
+3. input file, list of chromosome names
+4. input file in BED format, fixed track, test
+5. input file in BED format, fixed track, control
+6. integer number of iterations, minimal 100, at least 500 is required for stable results
+7. output file, statistical estimates for the overlap length between two tracks
+8. output file, distribution of expected overlap length 
+
+The main part of algorithm performing Monte Carlo simulation, one track in BED format, promoters of whole genome promoters with gene IDs, list of gene IDs for DEGs 
+[area_shuffling_pair_bed.cpp](https://github.com/parthian-sterlet/areasonic2/blob/master/src/area_shuffling_pair.cpp)
+
+Command line arguments:
+1. input file in BED format, permuted track 
+2. input file, the list of chromosome lengths 
+3. input file, list of chromosome names
+4. input file in BED format, fixed track, promoters with gene IDs, BED format
+5. input file in BED format, fixed track, list of gene IDs for DEGs
+6. integer number of iterations, minimal 100, at least 500 is required for stable results
+7. output file, statistical estimates for the overlap length between two tracks
+8. output file, distribution of expected overlap length 
 
 Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example runs of AreaSonic for two tracks: (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 6-th command line argument [as.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length between fixed and permuted tracks. The output file from 5-th command line argument [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows.
 | Label                | Value                          | Meaning |
@@ -75,10 +89,16 @@ Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/ma
 | AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total number of regions, total length of regions in bp
 | AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total number of regions, total length of regions in bp
 | Ncyc                 | 5000                           | Number of iterations
-| Real                 | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
-| PvalueLarger         | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
-| PvalueSmaller        | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
-| Av                   | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
-| SD                   | 41.342050                      | Standard deviation of expected overlap length, in kbp (1000 bp)
-| Zsco                 | 142.497526                     | Z-score of expected overlap length, Z-score = (Real - Av) / SD, positive/negative Z-score implies the enrichment/depletion in the total overlap length between two tracks
-| -Log10[Pval]         | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between two tracks
+| Real12, Real13       | 6950.760                       | Observed overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
+| Av12, Av13           | 1059.620106                    | Average expected overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
+| SD12, SD13           | 41.342050                      | Standard deviation of expected overlap length, the first and second, the first and third tracks, in kbp (1000 bp)
+| Zsco12, Zsco13               | 142.497526                     | Z-score of expected overlap length, the first and second: Z-score12 = (Real12 - Av12) / SD12, the first and third tracks Z-score13 = (Real13 - Av12) / SD13, positive/negative Z-score implies the enrichment/depletion in the total overlap length
+| -Log10[Pval12] -Log10[Pval13]    | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks
+|                      |                                |
+| Real13               | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
+| PvalueLarger13       | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
+| PvalueSmaller13      | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
+| Av13                 | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
+| SD13                 | 41.342050                      | Standard deviation of expected overlap length, in kbp (1000 bp)
+| Zsco13               | 142.497526                     | Z-score of expected overlap length, Z-score12 = (Real12 - Av12) / SD12, positive/negative Z-score implies the enrichment/depletion in the total overlap length between first and third tracks
+| -Log10[Pval13]       | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and third tracks
