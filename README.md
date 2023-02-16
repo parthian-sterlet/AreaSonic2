@@ -93,7 +93,7 @@ Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/ma
 | Av12, Av13           | 1059.620106                    | Average expected overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
 | SD12, SD13           | 41.342050                      | Standard deviation of expected overlap length, the first and second, the first and third tracks, in kbp (1000 bp)
 | Zsco12, Zsco13               | 142.497526                     | Z-score of expected overlap length, the first and second: Z-score12 = (Real12 - Av12) / SD12, the first and third tracks Z-score13 = (Real13 - Av12) / SD13, positive/negative Z-score implies the enrichment/depletion in the total overlap length
-| -Log10[Pval12] -Log10[Pval13]    | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks
+| -Log10[Pval12] -Log10[Pval13]    | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, the first and third tracks
 |                      |                                |
 | Real13               | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
 | PvalueLarger13       | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
