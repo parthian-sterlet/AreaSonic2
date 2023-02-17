@@ -88,7 +88,10 @@ Command line arguments:
 7. output file, statistical estimates for the overlap length between two tracks
 8. output file, distribution of expected overlap length 
 
-Perl script files [test_bed.pl](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/test_bed.pl) and [test_nobed.pl](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/test_nobed.pl) show the example runs of AreaSonic2 for two types of input data (1) three tracks in BED format, and (2) a track in BED format, another track in BED format for all genome promoters with gene IDs, and the list of gene ID for DEGs. Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 8-th command line argument [asb.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length the first and second tracks, and between the first and third tracks. The output file from 7-th command line argument [asb.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows (version with three tracks in BED format).
+# Command lines for example runs
+Files [1.bat](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/1.bat) and [2.bat](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/2.bat) presnt example command lines for two modes of input data of AreaSonic2 program (3 files in BED format, and 1 file in BED format, promoters, and list of gene IDs forDEGs). Perl script files [test_bed.pl](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/test_bed.pl) and [test_nobed.pl](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/test_nobed.pl) show the example runs of AreaSonic2 for two types of input data (1) three tracks in BED format, and (2) a track in BED format, another track in BED format for all genome promoters with gene IDs, and the list of gene ID for DEGs. Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 8-th command line argument [asb.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length the first and second tracks, and between the first and third tracks. 
+
+The output file from 7-th command line argument [asb.txt](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/asb.txt) lists calculation results as follows (version with three tracks in BED format).
 
  Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
@@ -97,8 +100,8 @@ Perl script files [test_bed.pl](https://github.com/parthian-sterlet/AreaSonic2/b
 | AreaConst2           | DHS_Ath_root_normal 62804 9558.864     | Fixed track (third): file name, total number of regions, total length of regions in bp
 | Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
 | Real                 | 98.463 85.477                          | Real12, Real13 Observed overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
-| Av                   | 12.592590 22.001664                    | Av12, Av13 Average expected overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
-| SD                   | 1.221718 1.559410                      | Standard deviation of expected overlap length, the first and second, the first and third tracks, in kbp (1000 bp)
+| Av                   | 12.592590 22.001664                    | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
+| SD                   | 1.221718 1.559410                      | Standard deviation of expected overlap length, the first and second tracks, the first and third tracks, in kbp (1000 bp)
 | Z                    | 70.286589 40.704702                    | Z12, Z13 Z-scores of expected overlap length, between the first and second tracks, and the first and third tracks, positive/negative Z-score implies the enrichment/depletion in the total overlap length
 | -Log10[Pval]         | 1074.7 361.494                         | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, and between the first and third tracks
 | Av                   | 0.015712 0.006640                      | Ratios between (a) the deviations of the overlap length Real12 and Real13 and from their expectations Av12 and Av13, and (b) the total length of tracks L2 and L3, are equal
@@ -106,7 +109,7 @@ Perl script files [test_bed.pl](https://github.com/parthian-sterlet/AreaSonic2/b
 | Z                    | 32.779568                              | Z-score of expected overlap length, Z-score12 = (Real12 - Av12) / SD12, positive/negative Z-score implies the enrichment/depletion in the total overlap length between first and third tracks
 | -Log10[Pval]         | 234.94                                 | P-value in logarithmic scale, estimation of the significance for the total overlap length between second and third tracks, with respect to first track
 
-The output file from 7-th command line argument [asb.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows (one track in BED format, promoters of whole genome promoters with gene IDs, list of gene IDs for DEGs).
+The output file from 7-th command line argument [as.txt](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/as.txt) lists calculation results as follows (one track in BED format, promoters of whole genome promoters with gene IDs, list of gene IDs for DEGs).
 
 | Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
