@@ -8,7 +8,7 @@ Scheme 1 of AreaSonic2 algorithm, permutation algorithm for a pair of tracks
 ![scheme1](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/AreaSonic21_github.png)
 
 Scheme 2 of AreaSonic2 algorithm, combination of two tracks with respect to another track
-![scheme2](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/AreaSonic22_github.png)
+![scheme2](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/AreaSonic_22_github.png)
 
 Thus, for two pairs of tracks, first/second and first/third, two overlap lengths, two expected overlap lengths, two standard deviations, two Z-scores and two p-values are computed (Real12 and Real13, Av12 and Av13, σ12 and σ13, Z-score12 and Z-score13,  p-value12 and p-value13), and three total lengths of tracks L1, L2 and L3. We should check the hypothesis that ratios between (a) the deviations of the overlap length Real12 and Real13 and from their expectations Av12 and Av13, and (b) the total length of tracks L2 and L3, are equal, see Scheme 2 below. Therefore, we check 
 
