@@ -217,7 +217,7 @@ int main(int argc, char *argv[])
 	char file_chr_len[500], file_chr_name[500], **filearea_var, **filechr, **filearea_const_back;
 	if (argc != 9)
 	{
-		printf("%s 1file_area_shuffled 2file chr_len_arrays 3chr_name_array 4file_list_area_constant_base_one(deg) 5file_area_constant_base_two(all) 6int_no_of_generations 7file_out 8file_out_distribution", argv[0]);
+		printf("%s 1file_area_shuffled 2file chr_len_arrays 3chr_name_array 4file_list_area_constant_base_one(deg) 5file_area_constant_base_two(all) 6int_no_of_generations 7file_out 8file_out_distribution ", argv[0]);//file_out_distribution
 		exit(1);
 	}
 	FILE* in_for, ** in_const_back, ** in_var, * out, * in_len, * in_name, * outd;
@@ -672,7 +672,7 @@ int main(int argc, char *argv[])
 	fprintf(out, "AreaVar\t%s\t%d\t%.3f\t", filearea_var_base, total_count_var, (double)string_area_var_len / KBASE);
 	fprintf(out, "AreaConst1\t%s\t%d\t%.3f\t", filearea_const_for, total_count_const[0], (double)string_area_const_len[0] / KBASE);
 	fprintf(out, "AreaConst2\t%s\t%d\t%.3f\t", filearea_const_back_base, total_count_const[1], (double)string_area_const_len[1] / KBASE);
-	fprintf(out, "%d\t%d\t", n_cyc[0], n_cyc[1]);
+	fprintf(out, "Ncyc\t%d\t%d\t", n_cyc[0], n_cyc[1]);
 	fprintf(out, "Real\t%.3f\t%.3f\tAv\t%f\t%f\tSD\t%f\t%f\tZ\t%f\t%f\tLog10[Pv]\t%g\t%g\t", real[0], real[1], rand_av[0], rand_av[1], rand_sd[0], rand_sd[1], z_score[0], z_score[1], pval_approx[0], pval_approx[1]);
 	fprintf(out, "Av\t%f\t%f\tSD\t%f\tZ\t%f\tLog10[Pv]\t%g\n", dol[0], dol[1], std12, z_score12, pval_approx12);
 	fclose(out); 
