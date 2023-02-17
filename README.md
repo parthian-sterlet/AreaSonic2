@@ -101,9 +101,9 @@ The output file from 7-th command line argument [asb.txt](https://github.com/par
 | AreaConst1           | DHS_Ath_seedling_normal 36064 5465.344 | Fixed track (second): file name, total number of regions, total length of regions in kbp
 | AreaConst2           | DHS_Ath_root_normal 62804 9558.864     | Fixed track (third): file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
-| Real                 | 98.463 85.477                          | Real12, Real13 Observed overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
-| Av                   | 12.592590 22.001664                    | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
-| SD                   | 1.221718 1.559410                      | Standard deviation of expected overlap length, the first and second tracks, the first and third tracks, in kbp (1000 bp)
+| Real                 | 98.463 85.477                          | Real12, Real13 Observed overlap length between the first and second, the first and third tracks, in kbp
+| Av                   | 12.592590 22.001664                    | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp
+| SD                   | 1.221718 1.559410                      | Standard deviation of expected overlap length, the first and second tracks, the first and third tracks, in kbp
 | Z                    | 70.286589 40.704702                    | Z12, Z13 Z-scores of expected overlap length, between the first and second tracks, and the first and third tracks, positive/negative Z-score implies the enrichment/depletion in the total overlap length
 | -Log10[Pval]         | 1074.7 361.494                         | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, and between the first and third tracks
 | Av                   | 0.015712 0.006640                      | Ratios between (a) the deviations of the overlap length Real12 and Real13 and from their expectations Av12 and Av13, and (b) the total length of tracks L2 and L3, are equal
