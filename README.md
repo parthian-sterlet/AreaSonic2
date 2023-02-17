@@ -7,7 +7,7 @@ AreaSonic2 assigns to the first track the label 'fixed', while the second and th
 Scheme 1 of AreaSonic2 algorithm, permutation algorithm for a pair of tracks
 ![scheme](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/AreaSonic21_github.png)
 
-Thus, for two pairs of tracks, first/second and first/third, two overlap lengths, two expected overlap lengths, two standard deviations, two Z-scores and two p-values are computed (Real12 and Real13, Av12 and Av13, σ12 and σ13, Z-score12 and Z-score13,  p-value12 and p-value13), and three total lengths of tracks L1, L2 and L3. We should check the hypothesis that ratios of overlap with the first track for the second and third tracks are equal: Real12/L2 == Real13/L3, in particular, we check 
+Thus, for two pairs of tracks, first/second and first/third, two overlap lengths, two expected overlap lengths, two standard deviations, two Z-scores and two p-values are computed (Real12 and Real13, Av12 and Av13, σ12 and σ13, Z-score12 and Z-score13,  p-value12 and p-value13), and three total lengths of tracks L1, L2 and L3. We should check the hypothesis that ratios between (a) the deviations of the overlap length Real12 and Real13 and from their expectations Av12 and Av13, and (b) the total length of tracks L2 and L3, are equal, see Scheme 2 below. Therefore, we check 
 
 Z-score = {(Real12 - Av12) / L2 - (Real13 - Av13) / L3} / SQRT{(σ12 * σ12) / (L2 * L2) + (σ13 * σ13) / (L3 * L3)}. 
 
@@ -19,13 +19,13 @@ Scheme 2 of AreaSonic2 algorithm, combination of three tracks: test of the signi
 The Areasonic2 program is based on the [AreaSonic](https://github.com/parthian-sterlet/AreaSonic) algorithm that was successively applied earlier in [Khoroshko et al. (2016)](https://doi.org/10.1371/journal.pone.0157147) and [Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines). Another motivation for AreaSonic2 tool came from the [CisCross](https://plamorph.sysbio.ru/ciscross/) tool, which aimed to reveal the enriched profile of DAP-seq/ChIP-seq peaks significantly enriched in promoters of DEGs compared to the promoters of the rest genes.
 
 # Requirements
-AreaSonic source code is written in C++ language. To compile exetubables from the source code you need:
+AreaSonic2 source code is written in C++ language. To compile exetubables from the source code you need:
 
 * In Linux system, C++ compiler, e.g. [GCC](https://gcc.gnu.org/) compiler 
 * In Windiws system any VC++ package, e.g. [Microsoft Visual Studio Community](https://visualstudio.microsoft.com/vs/community/)
 
 # Input data
-Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns in a track file are critically important, they represent a chromosome name and left/right positions of genomic regions. Note that regions in a BED file are presumed to be sorted in the ascending order of positions, the overlaps between neighbor regions are forbidden. Two input text files for the list of chromosome names and their lengths are required too, see their ready examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/chr_length_dm5.txt)
+Input data include two tracks in [BED format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). First three columns in a track file are critically important, they represent a chromosome name and left/right positions of genomic regions. Note that regions in a BED file are presumed to be sorted in the ascending order of positions, the overlaps between neighbor regions are forbidden. Two input text files for the list of chromosome names and their lengths are required too, see their ready examples for D. melanogaster (dm5), A. thaliana (at10), M. musculus (mm10) and H. sapiens (hg38) genomes in [src](https://github.com/parthian-sterlet/AreaSonic/tree/main/src) folder, e.g. [chr_name_dm.txt](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/chr_name_dm.txt) and [chr_length_dm5.txt](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/chr_length_dm5.txt)
 
 # Source code
 Folder [**src**](https://github.com/parthian-sterlet/areasonic2/tree/master/src) contains files with AreaSonic2 source codes, they respect to decribed below separate modules of pipeline.
@@ -101,8 +101,6 @@ Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/ma
 | -Log10[Pval12] -Log10[Pval13]    | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, the first and third tracks
 |                      |                                |
 | Real13               | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
-| PvalueLarger13       | 0                              | Fraction of iterations possesssing the higher overlap length than an observed one
-| PvalueSmaller13      | 1.000000                       | Fraction of iterations possesssing the lower overlap length than an observed one
 | Av13                 | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
 | SD13                 | 41.342050                      | Standard deviation of expected overlap length, in kbp (1000 bp)
 | Zsco13               | 142.497526                     | Z-score of expected overlap length, Z-score12 = (Real12 - Av12) / SD12, positive/negative Z-score implies the enrichment/depletion in the total overlap length between first and third tracks
