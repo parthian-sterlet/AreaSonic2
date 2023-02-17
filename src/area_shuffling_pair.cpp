@@ -671,7 +671,7 @@ int main(int argc, char *argv[])
 	}
 	fprintf(out, "AreaVar\t%s\t%d\t%.3f\t", filearea_var_base, total_count_var, (double)string_area_var_len / KBASE);
 	fprintf(out, "AreaConst1\t%s\t%d\t%.3f\t", filearea_const_for, total_count_const[0], (double)string_area_const_len[0] / KBASE);
-	fprintf(out, "AreaConst2\t%s\t%d\t%.3f", filearea_const_back_base, total_count_const[1], (double)string_area_const_len[1] / KBASE);
+	fprintf(out, "AreaConst2\t%s\t%d\t%.3f\t", filearea_const_back_base, total_count_const[1], (double)string_area_const_len[1] / KBASE);
 	fprintf(out, "%d\t%d\t", n_cyc[0], n_cyc[1]);
 	fprintf(out, "Real\t%.3f\t%.3f\tAv\t%f\t%f\tSD\t%f\t%f\tZ\t%f\t%f\tLog10[Pv]\t%g\t%g\t", real[0], real[1], rand_av[0], rand_av[1], rand_sd[0], rand_sd[1], z_score[0], z_score[1], pval_approx[0], pval_approx[1]);
 	fprintf(out, "Av\t%f\t%f\tSD\t%f\tZ\t%f\tLog10[Pv]\t%g\n", dol[0], dol[1], std12, z_score12, pval_approx12);
