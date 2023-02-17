@@ -62,7 +62,7 @@ Command line arguments:
 8. int logic: 1 means stringent requirement for criteria in all columns, 0 means mild requirement for only one of criteria in at least one of columns
 
 ## 2. Permutations
-The main part of algorithm performing Monte Carlo simulation, three tracks in BED format
+The first mode of the main part of algorithm performing Monte Carlo simulation, three tracks in BED format
 [area_shuffling_pair_bed.cpp](https://github.com/parthian-sterlet/areasonic2/blob/master/src/area_shuffling_pair_bed.cpp)
 
 Command line arguments:
@@ -75,7 +75,7 @@ Command line arguments:
 7. output file, statistical estimates for the overlap length between two tracks
 8. output file, distribution of expected overlap length 
 
-The main part of algorithm performing Monte Carlo simulation, one track in BED format, promoters of whole genome promoters with gene IDs, list of gene IDs for DEGs 
+The second  mode of the main part of algorithm performing Monte Carlo simulation, one track in BED format, promoters of whole genome promoters with gene IDs, list of gene IDs for DEGs 
 [area_shuffling_pair_bed.cpp](https://github.com/parthian-sterlet/areasonic2/blob/master/src/area_shuffling_pair.cpp)
 
 Command line arguments:
@@ -88,7 +88,7 @@ Command line arguments:
 7. output file, statistical estimates for the overlap length between two tracks
 8. output file, distribution of expected overlap length 
 
-Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example runs of AreaSonic for two tracks: (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 6-th command line argument [as.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length between fixed and permuted tracks. The output file from 5-th command line argument [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows.
+Perl script files [test_bed.pl](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/test_bed.pl) and [test_nobed.pl](https://github.com/parthian-sterlet/AreaSonic2/blob/main/src/test_nobed.pl) show the example runs of AreaSonic2 for two types of input data (1) three tracks in BED format, and (2) a track in BED format, another track in BED format for all genome promoters with gene IDs, and the list of gene ID for DEGs. Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 8-th command line argument [asb.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length the first and second tracks, and between the first and third tracks. The output file from 7-th command line argument [asb.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows (version with three tracks in BED format.
 
  Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
