@@ -89,19 +89,19 @@ Command line arguments:
 8. output file, distribution of expected overlap length 
 
 Perl script file [test.pl](https://github.com/parthian-sterlet/AreaSonic/blob/main/src/test.pl) shows the example runs of AreaSonic for two tracks: (1) domains of active aquamarine D.melanogaster chromatin from the [HMM model from Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines) and (2) peaks of Chriz/Chromator protein from [GSM1147251](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1147251). Example presents two runs of programs alternatively using first and second tracks as the permuted one. The output file from 6-th command line argument [as.dist](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.dist) shows the expected distribution for the total overlap length between fixed and permuted tracks. The output file from 5-th command line argument [as.txt](https://github.com/parthian-sterlet/AreaSonic/blob/main/examples/as.txt) lists calculation results as follows.
-| Label                | Value                          | Meaning |
+
+ Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| AreaVar              | chriz_GSM1147251 3863 8906852  | Permuted track: file name, total number of regions, total length of regions in bp
-| AreaConst            | aquamarine       5748 14078400 | Fixed track: file name, total number of regions, total length of regions in bp
-| Ncyc                 | 5000                           | Number of iterations
-| Real12, Real13       | 6950.760                       | Observed overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
-| Av12, Av13           | 1059.620106                    | Average expected overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
-| SD12, SD13           | 41.342050                      | Standard deviation of expected overlap length, the first and second, the first and third tracks, in kbp (1000 bp)
-| Zsco12, Zsco13               | 142.497526                     | Z-score of expected overlap length, the first and second: Z-score12 = (Real12 - Av12) / SD12, the first and third tracks Z-score13 = (Real13 - Av12) / SD13, positive/negative Z-score implies the enrichment/depletion in the total overlap length
-| -Log10[Pval12] -Log10[Pval13]    | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, the first and third tracks
-|                      |                                |
-| Real13               | 6950.760                       | Observed overlap length between two input tracks, in kbp (1000 bp)
-| Av13                 | 1059.620106                    | Average expected overlap length between fixed and permuted tracks for all iterations, in kbp (1000 bp)
-| SD13                 | 41.342050                      | Standard deviation of expected overlap length, in kbp (1000 bp)
-| Zsco13               | 142.497526                     | Z-score of expected overlap length, Z-score12 = (Real12 - Av12) / SD12, positive/negative Z-score implies the enrichment/depletion in the total overlap length between first and third tracks
-| -Log10[Pval13]       | 4411.54                        | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and third tracks
+| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first): file name, total number of regions, total length of regions in bp
+| AreaConst1           | DHS_Ath_seedling_normal 36064 5465.344 | Fixed track (second): file name, total number of regions, total length of regions in bp
+| AreaConst2           | DHS_Ath_root_normal 62804 9558.864     | Fixed track (third): file name, total number of regions, total length of regions in bp
+| Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
+| Real                 | 98.463 85.477                          | Real12, Real13 Observed overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
+| Av                   | 12.592590 22.001664                    | Av12, Av13 Average expected overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
+| SD                   | 1.221718 1.559410                      | Standard deviation of expected overlap length, the first and second, the first and third tracks, in kbp (1000 bp)
+| Z                    | 70.286589 40.704702                    | Z12, Z13 Z-scores of expected overlap length, between the first and second tracks, and the first and third tracks, positive/negative Z-score implies the enrichment/depletion in the total overlap length
+| -Log10[Pval]         | 1074.7 361.494                         | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, and between the first and third tracks
+| Av                   | 0.015712 0.006640                      | Ratios between (a) the deviations of the overlap length Real12 and Real13 and from their expectations Av12 and Av13, and (b) the total length of tracks L2 and L3, are equal
+| SD                   | 0.000277                               | Standard deviation of expected overlap length, in kbp (1000 bp)
+| Z                    | 32.779568                              | Z-score of expected overlap length, Z-score12 = (Real12 - Av12) / SD12, positive/negative Z-score implies the enrichment/depletion in the total overlap length between first and third tracks
+| -Log10[Pval]         | 234.94                                 | P-value in logarithmic scale, estimation of the significance for the total overlap length between second and third tracks, with respect to first track
