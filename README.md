@@ -123,8 +123,8 @@ The output file from 7-th command line argument [as.txt](https://github.com/part
 | Av                   | 7.467108 86.555878                     | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
 | SD                   | 1.459687 4.783833                      | Standard deviation of expected overlap length, the first and second tracks, the first and third tracks, in kbp (1000 bp)
 | Z                    | 19.727438 12.217633                    | Z12, Z13 Z-scores of expected overlap length, between the first and second tracks, and the first and third tracks, positive/negative Z-score implies the enrichment/depletion in the total overlap length
-| -Log10[Pval]         | 5.9051 36.813                          | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, and between the first and third tracks
+| -Log10[Pv]         | 5.9051 36.813                          | P-value in logarithmic scale, estimation of the significance for the total overlap length between first and second tracks, and between the first and third tracks
 | Av                   | 0.008969 0.001554                      | Ratios between (a) the deviations of the overlap length Real12 and Real13 and from their expectations Av12 and Av13, and (b) the total length of tracks L2 and L3
 | SD                   | 0.000472                               | Standard deviation of the differnce between two ratios
 | Z                    | 15.707311                              | Z-score, positive/negative Z-score implies the enrichment/depletion for the total overlap length between DEGs and non-DEGs, with respect to first track
-| -Log10[Pval]         | 54.8754                                | P-value in logarithmic scale, estimation of the significance for the total overlap length between DEGs and non-DEGs, with respect to first track
+| -Log10[Pv]           | 54.8754                                | P-value in logarithmic scale, estimation of the significance for the total overlap length between DEGs and non-DEGs, with respect to first track
