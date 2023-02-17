@@ -14,7 +14,6 @@ Z-score = {(Real12 - Av12) / L2 - (Real13 - Av13) / L3} / SQRT{(σ12 * σ12) / (
 This value allow to compute the final significance of the overlap of the second and third track woth respect to the first track, p-value. It is computed through the calculation of integral or for the large Z-scores with the asypmtoptic approximation, as described above.
 
 Scheme 2 of AreaSonic2 algorithm, combination of three tracks: test of the significance of two track with respect to another track
-![scheme](https://github.com/parthian-sterlet/AreaSonic2/blob/main/examples/AreaSonic22_github.png)
 
 The Areasonic2 program is based on the [AreaSonic](https://github.com/parthian-sterlet/AreaSonic) algorithm that was successively applied earlier in [Khoroshko et al. (2016)](https://doi.org/10.1371/journal.pone.0157147) and [Boldyreva et al. (2017)](https://www.researchgate.net/publication/303295899_Protein_and_Genetic_Composition_of_Four_Chromatin_Types_in_Drosophila_melanogaster_Cell_Lines). Another motivation for AreaSonic2 tool came from the [CisCross](https://plamorph.sysbio.ru/ciscross/) tool, which aimed to reveal the enriched profile of DAP-seq/ChIP-seq peaks significantly enriched in promoters of DEGs compared to the promoters of the rest genes.
 
