@@ -97,7 +97,7 @@ The output file from 7-th command line argument [asb.txt](https://github.com/par
 
  Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first): file name, total number of regions, total length of regions in kbp
+| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first): file name, total number of regions, total length of regions in kbp (1000 bp)
 | AreaConst1           | DHS_Ath_seedling_normal 36064 5465.344 | Fixed track (second): file name, total number of regions, total length of regions in kbp
 | AreaConst2           | DHS_Ath_root_normal 62804 9558.864     | Fixed track (third): file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
