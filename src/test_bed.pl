@@ -50,12 +50,14 @@ system $cmd;
 $cmd= "./tabnslolbik_wordget.exe	${file2}.bed	${file2}_chr${chr_here[$i]}.bed	1	1	chr${chr_here[$i]}	1 1 1";
 print "$cmd\n";
 system $cmd;
+
+$cmd= "./tabnslolbik_wordget.exe	${file3}.bed	${file3}_chr${chr_here[$i]}.bed	1	1	chr${chr_here[$i]}	1 1 1";
+print "$cmd\n";
+system $cmd;
+
 }
 
 $cmd= "./area_shuffling_pair_bed.exe	${file1}	chr_length_${ext_len}.txt	chr_name_${ext_nam}.txt	${file2}	${file3}	${iter}	${file_out_txt}	${file_out_dist}";
 print "$cmd\n";
 system $cmd;
 
-$cmd= "./area_shuffling_pair_bed.exe	${file1}	chr_length_${ext_len}.txt	chr_name_${ext_nam}.txt	${file3}	${file2}	${iter}	${file_out_txt}	${file_out_dist}";
-print "$cmd\n";
-system $cmd;
