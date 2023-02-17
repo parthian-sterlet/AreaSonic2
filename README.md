@@ -97,9 +97,9 @@ The output file from 7-th command line argument [asb.txt](https://github.com/par
 
  Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first): file name, total number of regions, total length of regions in bp
-| AreaConst1           | DHS_Ath_seedling_normal 36064 5465.344 | Fixed track (second): file name, total number of regions, total length of regions in bp
-| AreaConst2           | DHS_Ath_root_normal 62804 9558.864     | Fixed track (third): file name, total number of regions, total length of regions in bp
+| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first): file name, total number of regions, total length of regions in kbp
+| AreaConst1           | DHS_Ath_seedling_normal 36064 5465.344 | Fixed track (second): file name, total number of regions, total length of regions in kbp
+| AreaConst2           | DHS_Ath_root_normal 62804 9558.864     | Fixed track (third): file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
 | Real                 | 98.463 85.477                          | Real12, Real13 Observed overlap length between the first and second, the first and third tracks, in kbp (1000 bp)
 | Av                   | 12.592590 22.001664                    | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
@@ -115,9 +115,9 @@ The output file from 7-th command line argument [as.txt](https://github.com/part
 
 | Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
-| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first, BED format): file name, total number of regions, total length of regions in bp
-| AreaConst            | ein3_deg 2139 3210.639                 | Fixed track (second, list of IDs for DEGs): file name, total number of regions, total length of regions in bp
-| AreaConst            | ups1500_protcod_tair10 25063 37619.563 | Fixed track (third, all promoters with IDs in BED format, DEGs and non-DEGs): file name, total number of regions, total length of regions in bp
+| AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first, BED format): file name, total number of regions, total length of regions in kbp
+| AreaConst            | ein3_deg 2139 3210.639                 | Fixed track (second, list of IDs for DEGs): file name, total number of regions, total length of regions in kbp
+| AreaConst            | ups1500_protcod_tair10 25063 37619.563 | Fixed track (third, all promoters with IDs in BED format, DEGs and non-DEGs): file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
 | Real                 | 36.263 145.003                         | Real12, Real13 Observed overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
 | Av                   | 7.467108 86.555878                     | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
