@@ -116,8 +116,8 @@ The output file from 7-th command line argument [as.txt](https://github.com/part
 | Label                | Value                          | Meaning |
 |----------------------|--------------------------------|---------|
 | AreaVar              | EIN3_Chang  1230 275.513               | Permuted track (first, BED format): file name, total number of regions, total length of regions in kbp
-| AreaConst            | ein3_deg 2139 3210.639                 | Fixed track (second, list of IDs for DEGs): file name, total number of regions, total length of regions in kbp
-| AreaConst            | ups1500_protcod_tair10 25063 37619.563 | Fixed track (third, all promoters with IDs in BED format, DEGs and non-DEGs): file name, total number of regions, total length of regions in kbp
+| AreaConst1           | ein3_deg 2139 3210.639                 | Fixed track (second, list of IDs for DEGs): file name, total number of regions, total length of regions in kbp
+| AreaConst2           | ups1500_protcod_tair10 25063 37619.563 | Fixed track (third, all promoters with gene IDs in BED format, DEGs and non-DEGs): file name, total number of regions, total length of regions in kbp
 | Ncyc                 | 5000 5000                              | Number of iterations between the first and second tracks, and between the first and third tracks
 | Real                 | 36.263 145.003                         | Real12, Real13 Observed overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
 | Av                   | 7.467108 86.555878                     | Av12, Av13 Average expected overlap length between the first and second tracks, the first and third tracks, in kbp (1000 bp)
