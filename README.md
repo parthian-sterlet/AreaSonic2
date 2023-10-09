@@ -35,9 +35,9 @@ Folder [**src**](https://github.com/parthian-sterlet/areasonic2/tree/master/src)
 # How to compile
 * In Linux system: 
 
-git clone https://github.com/parthian-sterlet/areasonic2 \
-cd areasonic2\src\
-chmod a+x build.sh\
+git clone https://github.com/parthian-sterlet/areasonic2 
+cd areasonic2/src
+chmod a+x build.sh
 ./build.sh
 
 * In Windows system:
